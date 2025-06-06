@@ -7,6 +7,7 @@ import cors from 'cors'
 import cookieParser from "cookie-parser"
 import authRoutes from '../src/Auth/auth.routes.js'
 import { limiter } from '../middlewares/rate.limit.js'
+import TransferRouter from "../src/Transfer/Transfer.router.js"
 
 const configs = (app)=> {
     app.use(express.json())
@@ -19,7 +20,8 @@ const configs = (app)=> {
 }
 
 const routes = (app)=> {
-    app.use('/v1/banckobama/auth', authRoutes)
+    app.use('/v1/banckobama/auth', authRoutes),
+    app.use('/v1/banckobama/trasfer', TransferRouter)
 }
 
 export const initServer = ()=> {
