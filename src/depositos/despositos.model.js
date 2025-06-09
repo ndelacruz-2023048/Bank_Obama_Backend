@@ -4,7 +4,7 @@ const DepositoSchema = new Schema({
     user: {
         type: Schema.Types.ObjectId,
         ref: 'User',
-        required: [true, 'User is required']
+        
     },
     nombreDeposito: {
         type: String,
@@ -20,8 +20,7 @@ const DepositoSchema = new Schema({
     },
     fecha: {
         type: Date,
-        default: Date.now,
-        required: [true, 'La fecha del depósito es obligatoria'],
+        default: Date.now
     },
     tipo: {
         type: String,

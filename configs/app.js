@@ -6,6 +6,7 @@ import helmet from "helmet"
 import cors from 'cors'
 import cookieParser from "cookie-parser"
 import authRoutes from '../src/Auth/auth.routes.js'
+import depositosRoutes from '../src/depositos/despositos.routes.js'
 import { limiter } from '../middlewares/rate.limit.js'
 
 const configs = (app)=> {
@@ -20,6 +21,7 @@ const configs = (app)=> {
 
 const routes = (app)=> {
     app.use('/v1/banckobama/auth', authRoutes)
+    app.use('/v1/banckobama', depositosRoutes)
 }
 
 export const initServer = ()=> {
